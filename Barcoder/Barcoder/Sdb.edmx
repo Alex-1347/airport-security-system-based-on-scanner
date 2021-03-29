@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model.Store" Provider="System.Data.SQLite.EF6" ProviderManifestToken="Data Source=G:\Projects\ZebraScanner\Barcoder\Barcoder\ScannerDB.db" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Format">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="integer" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="FormatType" Type="integer" />
+          <Property Name="F1" Type="int" />
+          <Property Name="F1comment" Type="nvarchar" MaxLength="50" />
+          <Property Name="F2" Type="int" />
+          <Property Name="F2comment" Type="nvarchar" MaxLength="50" />
+          <Property Name="F3" Type="int" />
+          <Property Name="F3comment" Type="nvarchar" MaxLength="50" />
+          <Property Name="F4" Type="int" />
+          <Property Name="F4comment" Type="nvarchar" MaxLength="50" />
+          <Property Name="F5" Type="int" />
+          <Property Name="F5comment" Type="nvarchar" MaxLength="50" />
+          <Property Name="F6" Type="int" />
+          <Property Name="F6comment" Type="nvarchar" MaxLength="50" />
+          <Property Name="F7" Type="int" />
+          <Property Name="F7comment" Type="nvarchar" MaxLength="50" />
+          <Property Name="F8" Type="int" />
+          <Property Name="F8comment" Type="nvarchar" MaxLength="50" />
+          <Property Name="F9" Type="int" />
+          <Property Name="F9comment" Type="nvarchar" MaxLength="50" />
+          <Property Name="F10" Type="int" />
+          <Property Name="F10comment" Type="nvarchar" MaxLength="50" />
+          <Property Name="F11" Type="int" />
+          <Property Name="F11comment" Type="nvarchar" MaxLength="50" />
+          <Property Name="F12" Type="int" />
+          <Property Name="F12comment" Type="nvarchar" MaxLength="50" />
+          <Property Name="F13" Type="int" />
+          <Property Name="F13comment" Type="nvarchar" MaxLength="50" />
+          <Property Name="F14" Type="int" />
+          <Property Name="F14comment" Type="nvarchar" MaxLength="50" />
+          <Property Name="F15" Type="int" />
+          <Property Name="F15comment" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="InputData">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="crdate" Type="datetime" />
+          <Property Name="type" Type="integer" />
+          <Property Name="txt" Type="nvarchar" MaxLength="2048" />
+          <Property Name="split" Type="nvarchar" MaxLength="2048" />
+          <Property Name="comment" Type="nvarchar" MaxLength="2048" />
+        </EntityType>
+        <EntityType Name="Logins">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CrDate" Type="datetime" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pass" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="Format" EntityType="Self.Format" store:Type="Tables" />
+          <EntitySet Name="InputData" EntityType="Self.InputData" store:Type="Tables" />
+          <EntitySet Name="Logins" EntityType="Self.Logins" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Sdb" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="InputDatas" EntityType="Model.InputData" />
+          <EntitySet Name="Formats" EntityType="Model.Format" />
+          <EntitySet Name="Logins" EntityType="Model.Login" />
+          <EntitySet Name="Users" EntityType="Model.User" />
+        </EntityContainer>
+        <EntityType Name="InputData">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+		  <Property Name="crdate" Type="DateTime" />
+		  <Property Name="type" Type="Int64" />
+          <Property Name="txt" Type="String" MaxLength="2048" FixedLength="false" Unicode="true" />
+          <Property Name="split" Type="String" MaxLength="2048" FixedLength="false" Unicode="true" />
+		  <Property Name="comment" Type="String" MaxLength="2048" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Format">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="Int64" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="F1" Type="Int32" />
+          <Property Name="F1comment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="F2" Type="Int32" />
+          <Property Name="F2comment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="F3" Type="Int32" />
+          <Property Name="F3comment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="F4" Type="Int32" />
+          <Property Name="F4comment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="F5" Type="Int32" />
+          <Property Name="F5comment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="F6" Type="Int32" />
+          <Property Name="F6comment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="F7" Type="Int32" />
+          <Property Name="F7comment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="F8" Type="Int32" />
+          <Property Name="F8comment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="F9" Type="Int32" />
+          <Property Name="F9comment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="F10" Type="Int32" />
+          <Property Name="F10comment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="F11" Type="Int32" />
+          <Property Name="F11comment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="F12" Type="Int32" />
+          <Property Name="F12comment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="F13" Type="Int32" />
+          <Property Name="F13comment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="F14" Type="Int32" />
+          <Property Name="F14comment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="F15" Type="Int32" />
+          <Property Name="F15comment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FormatType" Type="Int64" />
+        </EntityType>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CrDate" Type="DateTime" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Sdb">
+          <EntitySetMapping Name="InputDatas">
+            <EntityTypeMapping TypeName="Model.InputData">
+              <MappingFragment StoreEntitySet="InputData">
+				<ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="crdate" ColumnName="crdate" />
+				<ScalarProperty Name="type" ColumnName="type" />
+				<ScalarProperty Name="txt" ColumnName="txt" />
+                <ScalarProperty Name="split" ColumnName="split" />
+				<ScalarProperty Name="comment" ColumnName="comment" />  
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Formats">
+            <EntityTypeMapping TypeName="Model.Format">
+              <MappingFragment StoreEntitySet="Format">
+                <ScalarProperty Name="FormatType" ColumnName="FormatType" />
+                <ScalarProperty Name="F15comment" ColumnName="F15comment" />
+                <ScalarProperty Name="F15" ColumnName="F15" />
+                <ScalarProperty Name="F14comment" ColumnName="F14comment" />
+                <ScalarProperty Name="F14" ColumnName="F14" />
+                <ScalarProperty Name="F13comment" ColumnName="F13comment" />
+                <ScalarProperty Name="F13" ColumnName="F13" />
+                <ScalarProperty Name="F12comment" ColumnName="F12comment" />
+                <ScalarProperty Name="F12" ColumnName="F12" />
+                <ScalarProperty Name="F11comment" ColumnName="F11comment" />
+                <ScalarProperty Name="F11" ColumnName="F11" />
+                <ScalarProperty Name="F10comment" ColumnName="F10comment" />
+                <ScalarProperty Name="F10" ColumnName="F10" />
+                <ScalarProperty Name="F9comment" ColumnName="F9comment" />
+                <ScalarProperty Name="F9" ColumnName="F9" />
+                <ScalarProperty Name="F8comment" ColumnName="F8comment" />
+                <ScalarProperty Name="F8" ColumnName="F8" />
+                <ScalarProperty Name="F7comment" ColumnName="F7comment" />
+                <ScalarProperty Name="F7" ColumnName="F7" />
+                <ScalarProperty Name="F6comment" ColumnName="F6comment" />
+                <ScalarProperty Name="F6" ColumnName="F6" />
+                <ScalarProperty Name="F5comment" ColumnName="F5comment" />
+                <ScalarProperty Name="F5" ColumnName="F5" />
+                <ScalarProperty Name="F4comment" ColumnName="F4comment" />
+                <ScalarProperty Name="F4" ColumnName="F4" />
+                <ScalarProperty Name="F3comment" ColumnName="F3comment" />
+                <ScalarProperty Name="F3" ColumnName="F3" />
+                <ScalarProperty Name="F2comment" ColumnName="F2comment" />
+                <ScalarProperty Name="F2" ColumnName="F2" />
+                <ScalarProperty Name="F1comment" ColumnName="F1comment" />
+                <ScalarProperty Name="F1" ColumnName="F1" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Logins">
+            <EntityTypeMapping TypeName="Model.Login">
+              <MappingFragment StoreEntitySet="Logins">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CrDate" ColumnName="CrDate" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="Model.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Pass" ColumnName="Pass" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7b37ca53350a4e2cb53c9c770e39d621" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.InputData" Width="1.5" PointX="0.625" PointY="0.625" />
+        <EntityTypeShape EntityType="Model.Format" Width="1.5" PointX="2.375" PointY="0.625" />
+        <EntityTypeShape EntityType="Model.Login" Width="1.5" PointX="5.875" PointY="0.625" />
+        <EntityTypeShape EntityType="Model.User" Width="1.5" PointX="4.125" PointY="0.625" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

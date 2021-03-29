@@ -1,4 +1,7 @@
 # Airport-Scanner-Security-System
+#Program controlling enter to Airport by various types of documents. (Four type of document supported and infinity document.)
+#Editor allow flexible show data to various column and show data can be changed at ant time. 
+
 ![Scanner-1](https://user-images.githubusercontent.com/81580242/112886094-256b6e80-90da-11eb-844a-07fbbdb2f31a.gif)
 ![Scanner-2](https://user-images.githubusercontent.com/81580242/112885459-76c72e00-90d9-11eb-8323-db0e1362c144.png)
 ![Scanner-3](https://user-images.githubusercontent.com/81580242/112885490-8181c300-90d9-11eb-9259-3a88e98c9807.png)
